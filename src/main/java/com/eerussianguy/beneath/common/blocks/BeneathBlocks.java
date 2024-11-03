@@ -5,6 +5,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import com.eerussianguy.beneath.Beneath;
+import com.eerussianguy.beneath.common.blockentities.AncientAltarBlockEntity;
 import com.eerussianguy.beneath.common.blockentities.BeneathBlockEntities;
 import com.eerussianguy.beneath.common.blockentities.HellforgeBlockEntity;
 import com.eerussianguy.beneath.common.items.BeneathItems;
@@ -91,7 +92,7 @@ public class BeneathBlocks
     public static final RegistryObject<Block> GLEAMFLOWER = register("gleamflower", () -> new NFlowerBlock(ExtendedProperties.of().sound(SoundType.GRASS).instabreak().speedFactor(0.8f).noCollission().lightLevel(s -> 7)));
     public static final RegistryObject<Block> BURPFLOWER = register("burpflower", () -> new BurpingFlowerBlock(ExtendedProperties.of().sound(SoundType.GRASS).instabreak().speedFactor(0.8f).noCollission().randomTicks()));
     public static final RegistryObject<Block> UNPOSTER = register("unposter", () -> new UnposterBlock(ExtendedProperties.of(MapColor.COLOR_BLUE).strength(0.6F).noOcclusion().sound(SoundType.WOOD).randomTicks().blockEntity(BeneathBlockEntities.UNPOSTER)));
-    public static final RegistryObject<Block> ANCIENT_ALTAR = register("ancient_altar", () -> new AncientAltarBlock(ExtendedProperties.of().mapColor(MapColor.COLOR_BLACK).strength(8f).noOcclusion().sound(SoundType.GILDED_BLACKSTONE).blockEntity(BeneathBlockEntities.ANCIENT_ALTAR)));
+    public static final RegistryObject<Block> ANCIENT_ALTAR = register("ancient_altar", () -> new AncientAltarBlock(ExtendedProperties.of().mapColor(MapColor.COLOR_BLACK).strength(8f).noOcclusion().sound(SoundType.GILDED_BLACKSTONE).blockEntity(BeneathBlockEntities.ANCIENT_ALTAR).ticks(AncientAltarBlockEntity::tickBothSides)));
     public static final RegistryObject<Block> SLIMED_NETHERRACK = register("ore/slimed_netherrack", () -> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).strength(1f).sound(SoundType.NETHERRACK)));
 
     public static final Map<Shroom, RegistryObject<Block>> SHROOMS = Helpers.mapOfKeys(Shroom.class, shroom -> registerNoItem("mushroom/" + shroom.getSerializedName(), () -> new NFlowerBlock(ExtendedProperties.of(Blocks.CRIMSON_FUNGUS))));
