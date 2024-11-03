@@ -18,6 +18,10 @@ An addon for TFC.
     versionRange="[0,)" #mandatory
     ordering="NONE"
     side="BOTH"
+    [dependencies.beneath.mc-publish]
+        ignore=false
+        modrinth="terrafirmacraft"
+        curseforge="terrafirmacraft"
 [[dependencies.beneath]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
